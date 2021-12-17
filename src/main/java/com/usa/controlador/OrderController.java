@@ -60,14 +60,7 @@ public class OrderController {
     
     }
     
-    
-//    @PutMapping("/update")
-//    @ResponseStatus(HttpStatus.CREATED)
-//    public Order update(@RequestBody Order order){
-//    
-//    return service.update(order);
-//    
-//    }
+
     
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
@@ -76,24 +69,17 @@ public class OrderController {
        return  service.deleteOrder(id);
     
     }
-    
-//    @GetMapping("/{status}")
-//    public List<Order> getByStatus(@PathVariable String status){
-//    
-//        return service.getStatus(status);
-//    
-//    }
+
     
     @GetMapping("/zona/{zone}")
     public List<Order> getByZone(@PathVariable String zone){
-    
         return service.getZone(zone);
     
     }
     
     @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
     public Order update(@RequestBody Order order){
-    
         return service.update(order);
     
     }

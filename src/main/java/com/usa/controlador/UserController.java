@@ -3,12 +3,12 @@ package com.usa.controlador;
 
 import com.usa.modelo.User;
 import com.usa.servicio.UserService;
-import com.usa.servicio.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  *
@@ -35,6 +35,15 @@ public class UserController {
     @GetMapping("/all")
     public List<User> getAll() {
         return service.getAll();
+    }
+
+
+
+    @GetMapping("/{id}")
+    public Optional<User> getUserById(@PathVariable int id){
+
+        return service.getUserById(id);
+
     }
 
     /**

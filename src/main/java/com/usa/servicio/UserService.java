@@ -15,17 +15,28 @@ import java.util.Optional;
  */
 @Service
 public class UserService {
+
+
+    /**
+     *
+     * @param user
+     */
      @Autowired
     private UserRepositorio userRepository;
-
+    /**
+     *
+     * @param user
+     */
     public List<User> getAll() {
         return userRepository.getAll();
     }
-
+    /**
+     *
+     * @param id
+     */
     public Optional<User> getUserById(int id) {
         return userRepository.getUserById(id);
     }
-
 
     /**
      *
@@ -170,6 +181,12 @@ public class UserService {
 
         }
     }
+    /**
+     *
+     * @param monthBirthtDay
+     */
+
+
     public List<User> birthtDayList(String monthBirthtDay) {
         return userRepository.birthtDayList(monthBirthtDay);
     }
